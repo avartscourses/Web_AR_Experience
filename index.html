@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olympus Rising</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient sound -->
+  <audio id="ambientAudio" src="assets/sounds/backgroundloop.mp3" loop></audio>
+
+  <!-- Global sound toggle (ambience + narration) -->
+  <button id="voiceToggle" aria-label="Toggle sound">🔇</button>
+
+  <!-- Main container -->
+  <div id="gameContainer">
+    <div id="contentBox">
+      <h1 id="title"></h1>
+      <p id="storyText"></p>
+      <div id="buttonsContainer"></div>
+
+      <!-- Chamber of Nemesis UI (hidden until stage 'chamber') -->
+      <div id="chamberUI" class="hidden">
+        <!-- Q1 -->
+        <div id="q1" class="chamber-block">
+          <p class="chamber-text">Who left the gate to the palace open?</p>
+          <div class="chamber-buttons">
+            <button data-answer="Hermes" class="q1btn">Hermes</button>
+            <button data-answer="Hera" class="q1btn">Zeus</button>
+            <button data-answer="Dionysus" class="q1btn">Apollo</button>
+          </div>
+          <p id="q1feedback" class="feedback"></p>
+        </div>
+
+        <!-- Q2: Drag & Drop -->
+        <div id="q2" class="chamber-block hidden">
+          <p class="chamber-text">Drag and drop the words to reconstruct Hermes’ message:</p>
+          <div id="words"></div>
+          <div id="dropzones"></div>
+          <div class="chamber-buttons">
+            <button id="checkPuzzleBtn">Check Answer</button>
+            <button id="resetPuzzleBtn">Reset</button>
+          </div>
+          <p id="puzzleResult" class="feedback"></p>
+        </div>
+
+        <!-- Chamber footer -->
+        <div id="chamberFooter" class="hidden chamber-footer">
+          <button id="finishBtn">Finish</button>
+          <button id="exitBtn">Play Again</button>
+        </div>
+
+        <!-- Attempts info -->
+        <p id="attemptsInfo" class="attempts"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
