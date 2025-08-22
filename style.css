@@ -1,0 +1,133 @@
+﻿/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Sound toggle */
+#voiceToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1000;
+}
+#voiceToggle.active { background: rgba(0,140,0,0.7); }
+
+/* Stage container */
+#gameContainer {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content card */
+#contentBox {
+  background: rgba(0,0,0,0.6);
+  padding: 24px 28px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 92%;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+#title {
+  font-size: 2rem;
+  margin: 0 0 12px;
+}
+#storyText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+/* Buttons area */
+#buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#buttonsContainer button,
+.chamber-buttons button,
+#finishBtn,#exitBtn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+#buttonsContainer button:hover,
+.chamber-buttons button:hover,
+#finishBtn:hover,#exitBtn:hover {
+  background-color: #666;
+}
+
+/* Chamber */
+.hidden { display: none !important; }
+
+.chamber-block { margin-top: 10px; }
+.chamber-text { font-size: 1.15rem; margin: 0 0 12px; }
+.chamber-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.feedback { min-height: 1.2em; margin: 10px 0 6px; }
+
+#words, #dropzones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.draggable-word {
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 6px;
+  user-select: none;
+}
+.dropzone {
+  width: 110px;
+  min-height: 40px;
+  border: 2px dashed rgba(255,255,255,0.35);
+  border-radius: 6px;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+}
+
+.chamber-footer {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.attempts {
+  margin-top: 10px;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
