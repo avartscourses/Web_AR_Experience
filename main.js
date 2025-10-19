@@ -417,34 +417,54 @@ function buildDragDropPuzzle() {
   wordsWrap.innerHTML = "";
   dropsWrap.innerHTML = "";
 
- dragWords = sentenceTarget.split(" ");
+  dragWords = sentenceTarget.split(" ");
 
-// Merge correct words + distractors
-const pool = [...dragWords, ...extraWords].sort(() => Math.random() - 0.5);
+  // Merge correct words + distractors
+  const pool = [...dragWords, ...extraWords].sort(() => Math.random() - 0.5);
 
-// Create draggable words from pool
-pool.forEach(w => {
-  const span = document.createElement("span");
-  span.className = "draggable-word";
-  span.textContent = w;
-  span.draggable = true;
-  span.addEventListener("dragstart", e => {
-    e.dataTransfer.setData("text/plain", w);
+  // --- Δημιουργία λέξεων (drag για desktop, tap για κινητό) ---
+  pool.forEach(w => {
+    const span = document.createElement("span");
+    span.className = "draggable-word";
+    span.textContent = w;
+    span.draggable = true;
+
+    // 🖱️ Desktop drag
+    span.addEventListener("dragstart", e => {
+      e.dataTransfer.setData("text/plain", w);
+    });
+
+    // 📱 Mobile tap
+    span.addEventListener("click", () => {
+      const empty = document.querySelector(".dropzone:empty");
+      if (empty) {
+        empty.textContent = w;
+        span.style.opacity = "0.4";
+        span.style.pointerEvents = "none";
+      }
+    });
+
+    wordsWrap.appendChild(span);
   });
-  wordsWrap.appendChild(span);
-});
 
-
-  // Create dropzones
+  // --- Δημιουργία dropzones ---
   dragWords.forEach(() => {
     const dz = document.createElement("span");
     dz.className = "dropzone";
+
+    // 🖱️ Desktop drop
     dz.addEventListener("dragover", e => e.preventDefault());
     dz.addEventListener("drop", e => {
       e.preventDefault();
       const word = e.dataTransfer.getData("text/plain");
       dz.textContent = word;
     });
+
+    // 📱 Tap για καθάρισμα
+    dz.addEventListener("click", () => {
+      dz.textContent = "";
+    });
+
     dropsWrap.appendChild(dz);
   });
 }
