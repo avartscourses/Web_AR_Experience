@@ -62,9 +62,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-#buttonsContainer button,
-.chamber-buttons button,
-#finishBtn,#exitBtn {
+#buttonsContainer button {
   background-color: #444;
   color: #fff;
   border: none;
@@ -74,60 +72,6 @@ body {
   cursor: pointer;
   transition: background 0.25s ease;
 }
-#buttonsContainer button:hover,
-.chamber-buttons button:hover,
-#finishBtn:hover,#exitBtn:hover {
+#buttonsContainer button:hover {
   background-color: #666;
-}
-
-/* Chamber */
-.hidden { display: none !important; }
-
-.chamber-block { margin-top: 10px; }
-.chamber-text { font-size: 1.15rem; margin: 0 0 12px; }
-.chamber-buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.feedback { min-height: 1.2em; margin: 10px 0 6px; }
-
-#words, #dropzones {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px 0;
-}
-.draggable-word {
-  padding: 8px 10px;
-  background: rgba(255,255,255,0.08);
-  border: 1px dashed rgba(255,255,255,0.25);
-  border-radius: 6px;
-  user-select: none;
-}
-.dropzone {
-  width: 110px;
-  min-height: 40px;
-  border: 2px dashed rgba(255,255,255,0.35);
-  border-radius: 6px;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.06);
-}
-
-.chamber-footer {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.attempts {
-  margin-top: 10px;
-  opacity: 0.9;
-  font-size: 0.95rem;
 }
