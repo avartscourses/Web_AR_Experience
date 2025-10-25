@@ -1,46 +1,85 @@
-Για την εργασία θα χρησιμοποιηθεί η MINDAR βιβλιοθήκη, όπως αυτή περιγράφεται από τον δημιουργό της στην σελίδα της [MINDAR](https://hiukim.github.io/mind-ar-js-doc/). Είναι ανοικτού κώδικα και υποστηρίζει image tracking & face tracking.
+# Augmented Reality Project using MINDAR
+This project uses the MINDAR library, as described by its creator on the official [MINDAR] (https://hiukim.github.io/mind-ar-js-doc/) Documentation. It is open-source and supports both image tracking and face tracking.
 
-## Εγκατάσταση εργαλείων
+## Tool Installation
 
-### Για την συγγραφή του κώδικα:
+### For code editing:
 Προτείνεται το [Brackets](https://brackets.io/) αλλά μπορείτε να χρησιμοποιήσετε όποιο άλλο θέλετε
 
-### Για να εκτελείτε τον κώδικα τοπικά:
-Ο κώδικας που θα χρησιμοποιήσουμε κάνει χρήση της κάμερας και επιπλέον πρέπει να δοκιμαστεί και σε κινητό τηλέφωνο. Γι αυτό τον λόγο πρέπει να εγκαταστηθεί ένας τοπικός (local)  HTTP server. Προτείνετε να χρησιμοποιηθεί το http server module της Python για τα Windows -υπάρχει ήδη στα MacOS & Linux:
+### For running the code locally:
+The code in this project uses the camera, and it should also be tested on a mobile device. For that reason, a local HTTP server is required It is recommended to use the HTTP server module of Python. (It is already included in macOS & Linux systems.). For windows user:
 1. Goto [Python.org](https://www.python.org/downloads/)
-2. Στα Download Section κλικ Python “3xxx”
-3. Επιλέξτε το <Windows Installer> για να κατεβάσετε το αρχείο εγκατάστασης
-4. Εκτελέστε το
-5. Επιλέξετε το “Add Python 3.xxx to PATH” κουτάκι επιλογής
-6. Εγκαταστήστε και κλείστε το παράθυρο
+2. In the Downloads section, click Python “3.x.x”
+3. Select the Windows Installer to download the setup file
+4. Run the installer
+5. Check the box “Add Python 3.x.x to PATH”
+6. Complete the installation and close the window
 
-Για να το ενεργοποιήσετε:
-1. Πηγαίντε στη γραμμή εντολών πληκτρολογώντας cmd
-2. Με τις εντολές cd <όνομα καταλόγου>, cd.. και dir πηγαίνετε στον φάκελο που υπάρχει ο κώδικας και πληκτρολογείτε 
-py -3 -m http.server για να ξεκινήσει να τρέχει ο local server στο default chanel 8000 ή εναλλακτικά πληκτρολογείστε το κανάλι που θέλετε
-3. Ανοίξτε τον web browser και πληκτρολογείστε localhost:8000 και θα εμφανιστούν οι φάκελοι και τα αρχεία που μπορούν να εκτελεστούν τοπικά
+To start the local server:
+1. Open the command line (type cmd in the search bar)
+2. Use the following commands to navigate to your project folder:
 
-### Αντιγραφή του αποθετηρίου και δημιουργία Github page 
-1. Αν δεν έχετε ήδη λογαριασμό στο [Github](https://github.com/), μπορείτε να δημιουργήσετε έναν χρησιμοποιώντας το email του πανεπιστημίου. 
-2. Στη συνέχεια συνδεθείτε στο αποθετήριο του μαθήματος και κάντε <fork> το αποθετήριο στον δικό σας λογαριασμό. 
-3. Δημιουργία github σελίδας ώστε η εργασία σας να υπάρχει online στον λογαριασμό σας διαθέσιμη σε όποιον έχει το σύνδεσμο στη σελίδα. Ο κώδικας που αντιγράψατε δείχνει στο δικό μου αποθετήριο, οπότε πρέπει να γίνουν οι απαραίτητες τροποποιήσεις στην επιλογή settings / δημιουργία github page.  
-4. Ο κώδικας εκτελείται και μπορείτε ήδη να δείτε την επάυξηση, εάν χρησιμοποιήσετε τα προεπιλεγμένα 3 markers (xxx.png) που υπάρχει στον φάκελο targets, μέσα στον φάκελο assets. 
+   cd <folder name>
+   cd..
+   dir
 
-*Συγχαρητήρια*, έχετε έτοιμο τον βασικό κώδικα της εφαρμογής σας!  
+3. Start the local server:
+    py -3 -m http.server
 
-Αποθήκευση αποθετηρίου (κώδικα) τοπικά στον υπολογιστή:
+This will run the local server on the default port 8000, or you can specify another port if you wish.
 
-1. Μπορείτε να χρησιμοποιήσετρε την εφαρμογή [git GUI](https://git-scm.com/download/win) - την κατεβάζετε και κάνετε εγκατάσταση στον υπολογιστή σας 
-2. Κλωνοποιείτε το αποθετήριο ώστε να εργάζεστε τοπικά.
-3. Αφού γίνει η κλωνοποίηση, μπορείτε να δουλέψετε τοπικά τον κώδικα στην εφαρμογή brackets ή Atom και να βλέπετε το αποτέλεσμα στον browser τοπικά.
+4. Open your browser and type:
+   localhost:8000
 
-### Συγχρονισμός και ενημέρωση του online αποθετηρίου.
-Όλη η δουλειά πρέπει να γίνεται τοπικά:
-1. έχετε unstaged changes που πρέπει να γίνουν staged, τουλάχιστον αυτές που επιθυμείτε να ανεβάσετε - 
-2. αφού ελέγξετε ότι έχουν επιλεγεί σωστά οι αλλαγές θα κάνετε commit. 
-Να θυμάστε ότι κάθε commit πρέπει να συνοδεύεται με κάποιο αντιπροσωπευτικό σχόλιο - 
-3. τέλος πρεπει να γίνει push στο github του commit
-Αν γίνει οποιαδήποτε αλλαγή στο online αποθετήριο τότε για να μην υπάρξουν απώλειες - συγκρούσεις πρέπει να ενημερώνετε και το τοπικό αποθετήριο (fetch from origin).
+You will see the folders and files that can be executed locally.
+
+### Cloning the Repository and Creating a GitHub Page
+If you do not already have a GitHub account, create one using your university email at [Githhub](Github.com). Log in and navigate to the course repository. 
+
+Click Fork to copy the repository into your own account. After forking, you must modify the repository settings to create your own GitHub Page (Settings → Pages). The code is now executable. You can already view the augmentation if you use the default 3 markers (xxx.png) located inside the folder assets/targets.
+
+Congratulations! You now have the base code of your AR application ready to work with. 
+
+### Git Setup and Workflow for Students
+
+Download and Install Git:
+
+1. Go to [https://git-scm.com/downloads](https://git-scm.com/downloads).  
+2. Download the installer for your operating system.  
+3. Run the installer and keep the default options. Make sure **Git Bash** and **Git GUI** are included.  
+4. Finish the installation.
+
+### 2. Configure Git
+
+1. Open **Git Bash** (installed with Git).  
+2. Set your name and email (used for commits):
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your_email@domain.com"Αποθήκευση αποθετηρίου (κώδικα) τοπικά στον υπολογιστή
+
+### Git GUI for Workflow
+1. Open Git GUI.
+2. Clone the Repository:
+3. Click Clone Existing Repository
+4. Paste the repository URL
+5. Choose a local folder and click Clone
+6. Make changes locally in your editor (e.g., Brackets, VS Code).
+7. Refresh Git GUI:
+8. Click Rescan to detect file changes
+9. Stage changes:
+10. Select the files in Unstaged Changes
+11. Click Stage Changed
+12. Commit changes:
+13. Write a descriptive message in Commit Message
+14. Click Commit
+15. Push to GitHub:
+16. Go to Remote → Push…
+17. Select origin and branch (main or master)
+18. Click Push
+
+
+
+....    
 
 ## Δημιουργία ψηφιακού περιεχομένου
 ### Δημιουργία της-ων εικόνας-ων - marker-s που ενεργοποιεί-ούν την επαύξηση:
