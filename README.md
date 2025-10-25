@@ -53,7 +53,6 @@ Download and Install Git:
 
 1. Open **Git Bash** (installed with Git).  
 2. Set your name and email (used for commits):
-   ```bash
    git config --global user.name "Your Name"
    git config --global user.email "your_email@domain.com"Αποθήκευση αποθετηρίου (κώδικα) τοπικά στον υπολογιστή
 
